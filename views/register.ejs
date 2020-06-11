@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>Register</h1>
+
+  <% if(typeof errors != 'undefined') { %>
+    <% errors.forEach(error=>{ %>
+      <li><%= error.msg %></li>
+      <%})%>
+    <%}%>
+  
+  <form action="/users/register" method="POST">
+    <label>
+      <p class="label-txt">ENTER YOUR NAME</p>
+      <input type="text" name="name" placeholder="Name" required>
+      <div class="line-box">
+        <div class="line"></div>
+      </div>
+    </label>
+    <label>
+      <p class="label-txt">ENTER YOUR EMAIL</p>
+      <input type="email" name="email" placeholder="email" required>
+      <div class="line-box">
+        <div class="line"></div>
+      </div>
+    </label>
+    <label>
+      <p class="label-txt">ENTER YOUR PASSWORD</p>
+      <input type="password" name="password" placeholder="Password" required>
+      <div class="line-box">
+        <div class="line"></div>
+      </div>
+    </label>
+    <label>
+      <p class="label-txt">CONFIRM PASSWORD</p>
+      <input type="password" name="password2" placeholder="Confirm Password" required>
+      <div class="line-box">
+        <div class="line"></div>
+      </div>
+    </label>
+    <input type="submit" value="Register"></input>
+  </form>
+  <a href="/users/login">Already Registere? Login!</a>
+</body>
+
+
+</html>
